@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Pages</title>
+  </head>
+  <body>
+    <h1>Pages</h1>
+    {% if pages %}
+      
+        {% for p in pages %}
+          <div>{{p.title}}</div>
+        {% endfor %}
+      
+    {% else %}
+      <p>No page found.</p>
+    {% endif %}
+  </body>
+</html>
