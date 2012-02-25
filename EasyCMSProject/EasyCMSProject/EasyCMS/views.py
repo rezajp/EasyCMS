@@ -27,4 +27,5 @@ def get_site(request):
     domain=get_domain(request)
     return SiteUrl.objects.filter(address=domain)[0].of_site
 def get_domain(request):
-    return request.META['HTTP_HOST']
+    return 'localhost:8000'
+    #return request.META['HTTP_HOST']

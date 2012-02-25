@@ -7,7 +7,7 @@
     {% if page.contents %}
       
         {% for pc in contents %}
-          <p>{{pc.of_content.title}}</p>
+          <p id={{pc.get_in_page_id}}>{{pc.of_content.title}}</p>
         {% endfor %}
       
     {% else %}
