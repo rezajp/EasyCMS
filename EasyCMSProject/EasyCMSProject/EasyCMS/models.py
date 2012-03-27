@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.fields.related import ManyToManyField
 
+
 class SiteInstance(models.Model):
     name = models.CharField(max_length=50, null=False, unique=True)
 
@@ -37,6 +38,12 @@ class LinkContent(Content):
 class ElementStyle(models.Model):
     style_key = models.CharField(null=False, max_length=50)
     style_value = models.CharField(null=False, max_length=50)
+class Menu(models.Model):
+    title = models.CharField(null=False,max_length=50)
+    in_site=models.ForeignKey('SiteInstance',null=False,related_name='menus')
+    to_page=models.ForeignKey('Page')
+    to_url_relative_path=models.CharField(max_length=100)
+    
     
     
     
